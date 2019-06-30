@@ -11,3 +11,15 @@ end
 get '/' do
 	erb "First Blog"			
 end
+
+get '/new' do
+	erb :new
+end
+
+post '/new' do
+
+	p = Post.new params[:post]
+	p.save
+
+	redirect to '/'
+end
