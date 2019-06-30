@@ -9,7 +9,10 @@ class Post < ActiveRecord::Base
 end
 
 get '/' do
-	erb "First Blog"			
+
+	@posts = Post.order 'created_at DESC'
+
+	erb :index		
 end
 
 get '/new' do

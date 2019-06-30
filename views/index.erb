@@ -1,0 +1,14 @@
+<h2>Latest posts:</h2>
+
+<br />
+<% @posts.each do |post| %>
+	<p>
+		<%= post.content %>
+		<br />
+		<br />
+		Author <%= post.author %>
+		<div align="right" style="font-size: 75%; color: #999">Added at <%= post.created_at %></div>
+		<!-- <a href="/details/%>">Comments</a> -->
+	</p>
+	<hr />
+<% end %>
