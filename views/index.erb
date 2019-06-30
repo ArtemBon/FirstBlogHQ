@@ -8,7 +8,7 @@
 		<br />
 		Author <%= post.author %>
 		<div align="right" style="font-size: 75%; color: #999">Added at <%= post.created_at %></div>
-		<!-- <a href="/details/%>">Comments</a> -->
+		<a href="/details/<%= post.id %>">Comments</a>
 	</p>
 	<hr />
 <% end %>

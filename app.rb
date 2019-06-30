@@ -31,3 +31,26 @@ post '/new' do
 
 	redirect to '/'
 end
+
+before '/details/:post_id' do
+
+	@post = Post.find params[:post_id]
+
+end
+
+get '/details/:post_id' do
+
+	@comments = @post.comments.all
+
+	erb :details
+
+end
+
+post '/details/:post_id' do
+
+	comment = @post.comments.new params[:comment]
+	comment.save
+
+	redirect to "/details/#{params[:post_id]}" 
+
+end
